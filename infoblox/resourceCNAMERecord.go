@@ -58,7 +58,7 @@ func resourceCNAMERecordCreate(d *schema.ResourceData, m interface{}) error {
 	tenantID := d.Get("tenant_id").(string)
 	connector := m.(*ibclient.Connector)
 
-	objMgr := ibclient.NewObjectManager(connector, "terraform", tenantID)
+	objMgr := NewObjectManager(connector, cmpType, tenantID)
 	recordCNAME, err := objMgr.CreateCNAMERecord(canonical, alias, dnsView)
 	if err != nil {
 		return fmt.Errorf("Error creating CNAME Record : %s", err)
@@ -78,7 +78,7 @@ func resourceCNAMERecordGet(d *schema.ResourceData, m interface{}) error {
 	tenantID := d.Get("tenant_id").(string)
 	connector := m.(*ibclient.Connector)
 
-	objMgr := ibclient.NewObjectManager(connector, "terraform", tenantID)
+	objMgr := NewObjectManager(connector, cmpType, tenantID)
 
 	_, err := objMgr.GetCNAMERecordByRef(d.Id())
 	if err != nil {
@@ -101,7 +101,7 @@ func resourceCNAMERecordDelete(d *schema.ResourceData, m interface{}) error {
 	tenantID := d.Get("tenant_id").(string)
 	connector := m.(*ibclient.Connector)
 
-	objMgr := ibclient.NewObjectManager(connector, "terraform", tenantID)
+	objMgr := NewObjectManager(connector, cmpType, tenantID)
 
 	_, err := objMgr.DeleteCNAMERecord(d.Id())
 	if err != nil {

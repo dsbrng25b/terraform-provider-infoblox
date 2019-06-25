@@ -68,7 +68,7 @@ func resourceNetworkCreate(d *schema.ResourceData, m interface{}) error {
 	connector := m.(*ibclient.Connector)
 
 	ZeroMacAddr := "00:00:00:00:00:00"
-	objMgr := ibclient.NewObjectManager(connector, "terraform", tenantID)
+	objMgr := NewObjectManager(connector, cmpType, tenantID)
 
 	nwname, err := objMgr.CreateNetwork(networkViewName, cidr, networkName)
 	if err != nil {
@@ -106,7 +106,7 @@ func resourceNetworkRead(d *schema.ResourceData, m interface{}) error {
 	tenantID := d.Get("tenant_id").(string)
 	connector := m.(*ibclient.Connector)
 
-	objMgr := ibclient.NewObjectManager(connector, "terraform", tenantID)
+	objMgr := NewObjectManager(connector, cmpType, tenantID)
 
 	_, err := objMgr.GetNetworkwithref(d.Id())
 	if err != nil {
@@ -128,7 +128,7 @@ func resourceNetworkDelete(d *schema.ResourceData, m interface{}) error {
 	tenantID := d.Get("tenant_id").(string)
 	connector := m.(*ibclient.Connector)
 
-	objMgr := ibclient.NewObjectManager(connector, "terraform", tenantID)
+	objMgr := NewObjectManager(connector, cmpType, tenantID)
 
 	_, err := objMgr.DeleteNetwork(d.Id(), d.Get("network_view_name").(string))
 	if err != nil {
