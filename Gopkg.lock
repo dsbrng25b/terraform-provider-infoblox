@@ -285,12 +285,13 @@
   revision = "683f49123a33db61abfb241b7ac5e4af4dc54d55"
 
 [[projects]]
-  digest = "1:57599833c38cf958533928462f7eb7a28a323ec61bf6eaf020fff06fd0dca4b6"
+  branch = "master"
+  digest = "1:4202fe49e8037b4664cb197d4094cf638266d60dcb2881d0b77780d713604d27"
   name = "github.com/infobloxopen/infoblox-go-client"
   packages = ["."]
   pruneopts = "UT"
-  revision = "7247dee3156a9d790d26ee2e0ea609bd24e844a0"
-  version = "v1.0"
+  revision = "52ffa8a9829b561245a71ed59cef67bda96b9966"
+  source = "https://github.com/dsbrng25b/infoblox-go-client.git"
 
 [[projects]]
   digest = "1:e22af8c7518e1eab6f2eab2b7d7558927f816262586cd6ed9f349c97a6c285c4"
@@ -568,8 +569,6 @@
     "github.com/hashicorp/terraform/plugin",
     "github.com/hashicorp/terraform/terraform",
     "github.com/infobloxopen/infoblox-go-client",
-    "github.com/sirupsen/logrus",
-    "golang.org/x/net/publicsuffix",
   ]
   solver-name = "gps-cdcl"
   solver-version = 1

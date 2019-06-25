@@ -31,7 +31,8 @@
 
 [[constraint]]
   name = "github.com/infobloxopen/infoblox-go-client"
-  version = "1.0"
+  source = "https://github.com/dsbrng25b/infoblox-go-client.git"
+  branch = "master"
 
 [prune]
   go-tests = true
