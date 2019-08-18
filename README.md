@@ -1,13 +1,15 @@
 # Terraform Provider for Infoblox
- <img width="171" alt="capture" src="https://user-images.githubusercontent.com/36291746/39614422-6b653088-4f8d-11e8-83fd-05b18ca974a2.PNG">
 
-## Requirments
-
-
+## Requirements
 * [Terraform](https://www.terraform.io/downloads.html) 0.11.x
 * [Go](https://golang.org/doc/install) 1.9 (to build the provider plugin)
 * [dep](https://github.com/golang/dep)
-* CNA License need to be installed on NIOS
+* Extensible Attributes: If you use Infoblox in a on-prem environment and you don't have the CNA license you have to create the following extensible attributes in the admin GUI under Administration -> Extensible Attributes:
+  * `VM Name`
+  * `VM ID`
+  * `Tenant ID`
+  * `CMP Type`
+  * `Cloud API Owned`
 
 ## Building the Provider
 
